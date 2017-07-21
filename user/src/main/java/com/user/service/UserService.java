@@ -14,9 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Aravind
  */
 @Transactional
-public interface UserService extends CrudRepository<UserModel, Long> {
+public interface UserService extends CrudRepository<UserModel, String> {
    
    public UserModel findByUsername(String username);
    public UserModel findByEmail(String email);
+   public UserModel findByUserId(String userId);
    
 }

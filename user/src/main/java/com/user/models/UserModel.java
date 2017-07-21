@@ -6,7 +6,7 @@
 package com.user.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -14,21 +14,23 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "users")
-public class UserModel {
+public class UserModel implements BaseModel {
    
    @Id
    private String userId;
    
-   @NotNull
+   @NotNull(message = "Invalid username provided.")
+   @Size(min=5, max=10)
    private String username;
    
    @NotNull
+   @Size(min=8)
    private String password;
    
    @NotNull
    private String email;
 
-   @NotNull
+   @Column(columnDefinition = "varchar(10) default 'active'")
    private String status;
    
    public UserModel() {}
