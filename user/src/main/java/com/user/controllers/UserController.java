@@ -127,7 +127,7 @@ public class UserController {
    
    @RequestMapping(value = "/users/search", method = RequestMethod.POST)
    @ResponseBody
-   public ResponseModel getUsers(@RequestParam(value = "key") String searchTerm, Errors errors) {
+   public ResponseModel getUsers(@RequestParam(value = "key") String searchTerm) {
       ResponseModel rmObj = new ResponseModel();
       
       Session session = null;
