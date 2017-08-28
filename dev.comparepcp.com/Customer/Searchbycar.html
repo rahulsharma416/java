@@ -620,7 +620,6 @@ and open the template in the editor.
                 }
             }
 
-
             $("#btnsearch").click(function () {
                 $('#binditem').empty();
 
@@ -1609,6 +1608,7 @@ and open the template in the editor.
 
 
             $('#binditem').on('click', '.openpopup', function () {
+               /*
                 var a = $(this).data("doc_value");
 
 
@@ -1696,11 +1696,7 @@ and open the template in the editor.
                         }
                         if (result.Mess_age == "Session") {
                             alert("Session Expired");
-
-
                         }
-
-
                     },
                     failure: function (response) {
                         alert("Error");
@@ -1712,8 +1708,6 @@ and open the template in the editor.
 
 
                 $("#" + a).click(function () {
-                    //  var that = $('#Singleitem');
-                    //var a = that.data("doc_value");
                     $('.popup').hide("medium");
 
                     var id = productId;
@@ -1722,37 +1716,19 @@ and open the template in the editor.
                     var Prodname = brand;
                     var Productemi = monthly;
                     var ProductDistance = distance1;
-
                     var selected = getSelectedIds();
-
-
-
-
-
-
                     if (selected.length == 4) {
                         wow_default_car_alreadyAdded();
                         return;
-                        // already 4 items added
                     }
-
                     else {
                         $('.sel' + id).addClass('checkborder5585');
                     }
 
                     if (selected.indexOf(id) != -1) {
                         return; // item already added
-
                     }
-
-
-
                     var std = '<div class="box"><span class="prod-id" style="display: none">' + id + '</span><span class="dealer-id" style="display: none">' + dealerId + '</span><div class="im-relative"><img src="../../Car/' + Prodimg + '" style="width:120px;"><a href="#" class="checkdelete" id=' + id + '><i class="fa fa-times" aria-hidden="true"></i></a></div><div><span>' + Prodname + '</span><br></div><span class="prod-emi" style="display: none">' + Productemi + '</span><span class="prod-dist" style="display: none">' + ProductDistance + '</span></div>';
-
-
-
-
-
                     $('#container').append(std);
 
                     updateLinkAndCounter();
@@ -1762,7 +1738,7 @@ and open the template in the editor.
 
                 });
 
-
+*/
 
 
 
@@ -1771,6 +1747,7 @@ and open the template in the editor.
 
 
             $('#Singleitem').on('click', '.openpopup', function () {
+               /*
                 var a = $(this).data("doc_value");
 
 
@@ -1902,7 +1879,7 @@ and open the template in the editor.
                     $("#comparebutton").removeClass("hidden");
 
                 });
-
+*/
             });
 
 
@@ -2274,9 +2251,10 @@ and open the template in the editor.
                         $.ajax({
                             async: false,
                             type: "Post",
-                            url: '/Customer/GetProductssearchbycar1',
+                            url: 'GetProduct.php',
                             dataType: "json",
-                            data: { period1: period, mileage1: milege, Cashdeposite: cashdeposite, Br_and: brand, Mo_del: model, Va_riant: variant, Longitude: longitude, Latitude: latitude, flag: i },
+                            data: { period1: period, mileage1: milege, Cashdeposite: cashdeposite, Br_and: brand, 
+                               Mo_del: model, Va_riant: variant, Longitude: longitude, Latitude: latitude, flag: i },
                             success: OnSuccess,
 
                             failure: function (response) {
@@ -2323,7 +2301,7 @@ and open the template in the editor.
                         $.ajax({
                             async: false,
                             type: "Post",
-                            url: '/Customer/GetProducts',
+                            url: 'GetProducts.php',
                             dataType: "json",
                             data: { period1: period, mileage1: millege, brand1: $("#txtbrand").val(), body1: body, transmission1: transmission, fuel1: fuel, doors1: doors, payment1: payment, retailprice1: retailprice, currentid1: currentid, cashdeposite1: cashdeposite, nearesttown1: nearesttown, Longitude: longitude, Latitude: latitude, _Countrecord: $('.divcountrow').length },
                             success: OnSuccess2,
@@ -3519,13 +3497,13 @@ and open the template in the editor.
                         <div class="col-sm-6">
                             <select class="form-control searmyelement required" id="dropbrand1" name="dropbrand1"><option value="">Select Brand</option>
 <option value="Audi">Audi</option>
-<option value="BMW">BMW</option>
+<!--<option value="BMW">BMW</option>
 <option value="Jaguar">Jaguar</option>
 <option value="Land Rover">Land Rover</option>
 <option value="Lexus">Lexus</option>
 <option value="Skoda">Skoda</option>
 <option value="Toyota">Toyota</option>
-<option value="VW">VW</option>
+<option value="VW">VW</option>-->
 </select>
                         </div>
                         <div class="col-sm-6">
