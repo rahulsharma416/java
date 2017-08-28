@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<!-- Mirrored from dev.comparepcp.com/Home/Homepage by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2017 06:29:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Latest PCP Car deals | comparepcp.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="../favicon.html" />
+    <link rel="shortcut icon" type="image/png" href="../assets1/images/favicon.png"/>
+
+    <meta name="description" content="Compare PCP deals on multiple car brands. You can search PCP deals by monthly budget or by car. A better PCP deal can help you save 10-15% on the retail price. " />
+    <meta name="keywords" content="compare pcp deals, pcp deals on multiple car brands, search pcp deals, pcp deals by monthly budget, pcp deals by car, better pcp deals" />
+
+    <link href="../assets1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="../assets1/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets1/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <link href="../assets1/css/animate.css" rel="stylesheet" type="text/css"/>
+    <script src="../assets1/js/wow.min.js" type="text/javascript"></script>
+    <script>new WOW().init();</script>
+
+    <link href="../assets1/css/menustyles.css" rel="stylesheet" type="text/css"/>
+    <script src="../assets1/js/menuscript.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="../assets1/css/popup.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets1/css/scroll.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets1/css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <script src="../assets1/js/myjs.js" type="text/javascript"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-99088035-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    
+
+    
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../assets/js/example.js"></script>
+    <link href="../assets/css/wow-alert.css" rel="stylesheet" type="text/css" />
+
+   
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#demo").hide();
+
+            $(".loginbox").click(function () {
+                $("#demo").show();
+
+                $('<div class="dropdown-backdrop1"/>')
+.insertAfter("#demo")
+.click(function () {
+
+    //hide the popup box here
+    //$(".yourPopupBox").hide();
+});
+                //$('body').css('overflow-y', 'hidden')
+                $(function () {
+                    $('.testbox').css({
+                        'position': 'absolute',
+                        'left': '50%',
+                        'top': '50%',
+                        'margin-left': -$('.testbox').outerWidth() / 2,
+                        'margin-top': -$('.testbox').outerHeight() / 2
+                    });
+                });
+            });
+
+            $(".login").show();
+            $(".Register").hide();
+            $(".Reset").hide();
+            $(".accounttype input:radio").click(function () {
+
+                if ($('.accounttype input:radio:checked').val() == "Login") {
+                    $(".login").show();
+                    $(".Reset").hide();
+                    $(".Register").hide();
+                }
+
+                if ($('.accounttype input:radio:checked').val() == "Register") {
+                    $(".login").hide();
+                    $(".Reset").hide();
+                    $(".Register").show();
+                }
+
+                if ($('.accounttype input:radio:checked').val() == "Reset Password") {
+                    $(".login").hide();
+                    $(".Register").hide();
+                    $(".Reset").show();
+                }
+            });
+
+            if (document.getElementById('radioOne').checked) {
+                $(".login").show();
+                $(".Reset").hide();
+                $(".Register").hide();
+            }
+            if (document.getElementById('radioTwo').checked) {
+                $(".login").hide();
+                $(".Reset").hide();
+                $(".Register").show();
+            }
+            if (document.getElementById('radioThree').checked) {
+                $(".Reset").show();
+                $(".login").hide();
+                $(".Register").hide();
+            }
+
+            $('.close1').click(function () {
+                $("#demo").hide();
+                $('.dropdown-backdrop1').remove();
+                $("#name").val('');
+                $("#email").val('');
+                $("#password").val('');
+                $("#loginname").val('');
+                $("#loginpassword").val('');
+                //$('body').css('overflow-y', 'scroll')
+            });
+
+            $("#register").click(function () {
+                if ($("#form2").valid()) {
+
+                    //$('#content12').show();
+                    //$('#content12>div').html('<img src="../../assets/images/loader.gif" width="200"  >');
+
+
+
+                    var p1 = $('.binditem').find("span.txtp1").text();
+                    var d1 = $('.binditem').find("span.txtdealerId1").text();
+                    var p2 = $('.binditem').find("span.txtp2").text();
+                    var d2 = $('.binditem').find("span.txtdealerId2").text();
+                    var p3 = $('.binditem').find("span.txtp3").text();
+                    var d3 = $('.binditem').find("span.txtdealerId3").text();
+                    var p4 = $('.binditem').find("span.txtp4").text();
+                    var d4 = $('.binditem').find("span.txtdealerId4").text();
+                    var cashdeposite = $('.binditem').find("span.Searchdeposite").text();
+                    var period1 = $('.binditem').find("span.txtperiod1").text();
+                    var E11 = $('.binditem').find('span.txtE').text();
+                    var E12 = $('.binditem').find('span.txtE2').text();
+                    var E13 = $('.binditem').find('span.txtE3').text();
+                    var E14 = $('.binditem').find('span.txtE4').text();
+
+                    var Dist1 = $('.binditem').find('span.txtDis1').text();
+                    var Dist2 = $('.binditem').find('span.txtDis2').text();
+                    var Dist3 = $('.binditem').find('span.txtDis3').text();
+                    var Dist4 = $('.binditem').find('span.txtDis4').text();
+
+                    var town = $('.binditem').find('span.txttown').text();
+                    var miles = $('.binditem').find('span.txtmiles').text();
+
+                    $.ajax({
+                        async: false,
+                        type: "Get",
+                        url: '/Home/Customerregistration/',
+                        data: { na_me: $('#name').val(), Email_id: $('#email').val(), Pass_word: $('#password').val(), P1: p1, D1: d1, cashDeposite: cashdeposite, period: period1, E1: E11, P2: p2, D2: d2, E2: E12, P3: p3, D3: d3, E3: E13, P4: p4, D4: d4, E4: E14, dist1: Dist1, dist2: Dist2, dist3: Dist3, dist4: Dist4, Town: town, Miles: miles },
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+
+                        success: function (result) {
+
+                            if (result.Mess_age == "Already Exist") {
+
+                                wow_default_alert();
+                                // $("#dialog-form").dialog("close");
+                            }
+                            if (result.Mess_age == "Error") {
+
+                                wow_default_alerterror();
+                                // $("#dialog-form").dialog("close");
+                            }
+                            if (result.Mess_age == "Success") {
+
+                                //$("#dialog-form").dialog("close");
+
+                                window.location.href = "../Customer/SearchByCar7a63.html";
+
+                                // alert("Success");
+                                $('#name').val('');
+                                $('#email').val('');
+
+                                $('#password').val('');
+
+                            }
+                            if (result.Mess_age == "Session") {
+                                alert("Session Error");
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.d);
+                        },
+                        error: function (response) {
+                            alert(response.d);
+                        }
+                    });
+                }
+
+
+            });
+
+            $("#login").click(function () {
+
+
+                if ($("#form2").valid()) {
+
+                    //$('#content12').show();
+                    //$('#content12>div').html('<img src="../../assets/images/loader.gif" width="200"  >');
+
+
+                    $.ajax({
+                        async: false,
+                        type: "Post",
+                        url: '/Customer/Login/',
+                        data: { na_me: $('#loginname').val(), Pass_word: $('#loginpassword').val() },
+                        //contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+
+                        success: function (result) {
+
+                            if (result.Mess_age == "Not Login") {
+
+                                alert("The username and password you entered don't match. ");
+
+                            }
+                            if (result.Mess_age == "Error") {
+
+                                alert("Your account is inactive so please contact to administrator");
+
+                            }
+                            if (result.Mess_age == "Success") {
+
+                                //$("#dialog-form").dialog("close");
+
+                                window.location.href = "../Customer/SearchByCar7a63.html";
+
+                                // alert("Success");
+                                $('#name').val('');
+                                $('#email').val('');
+
+                                $('#password').val('');
+
+                            }
+                            if (result.Mess_age == "Session") {
+                                alert("Session Error");
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.d);
+                        },
+                        error: function (response) {
+                            alert(response.d);
+                        }
+                    });
+                }
+
+            });
+
+            $("#reset").click(function () {
+
+
+                if ($("#form2").valid()) {
+
+                    //$('#content12').show();
+                    //$('#content12>div').html('<img src="../../assets/images/loader.gif" width="200"  >');
+                   
+                    $.ajax({
+                        async: false,
+                        type: "Get",
+                        url: '/Customer/ForgotPassword/',
+                        data: { emailId: $("#emailId").val() },
+                        //contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+
+                        success: function (result) {
+
+                            if (result.Mess_age == "Success") {
+
+
+                                $("#name").val('');
+                                $("#email").val('');
+                                $("#password").val('');
+                                $("#loginname").val('');
+                                $("#loginpassword").val('');
+                                $("#emailId").val('');
+
+
+
+                                $("#demo").hide();
+                                $('.dropdown-backdrop1').remove();
+                               
+                                alert("Pls. check your email and reset your password.");
+
+                            }
+                            if (result.Mess_age == "Not Exist") {
+
+                                alert("Email Id is not exist.");
+
+                            }
+                            if (result.Mess_age == "Error") {
+
+                                alert("Error");
+
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.d);
+                        },
+                        error: function (response) {
+                            alert(response.d);
+                        }
+                    });
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        window.heap = window.heap || [], heap.load = function (e, t) { window.heap.appid = e, window.heap.config = t = t || {}; var r = t.forceSSL || "https:" === document.location.protocol, a = document.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = (r ? "https:" : "http:") + "//cdn.heapanalytics.com/js/heap-" + e + ".js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(a, n); for (var o = function (e) { return function () { heap.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], c = 0; c < p.length; c++) heap[p[c]] = o(p[c]) };
+        heap.load("4050764187");
+</script>
+
+</head>
+<body>
+
+
+ 
+    <div class="container-fluid menu-bg">
+        <div class="row">
+            <div class="container">
+                <div class="row mn-flexbox">
+                    <div class="col-md-3 col-sm-4 col-xs-12 text-center hidden-xs">
+                        <a href="Homepage.html">
+                            <img src="../assets/images/logo.jpg" class="img-responsive" alt=""/></a>
+
+                        
+                        <h1 class="headline">Latest PCP Car deals</h1>
+                    </div>
+
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <div class="menuflex">
+                            <div id='cssmenu'>
+                                
+    <ul>
+        <li class="active"><a href='Homepage.html'>Home</a></li>
+        <li><a href='../Customer/Searchbycar.html'>Compare</a></li>
+        <li><a href='Aboutpcp.html'>About PCP</a></li>
+        <li><a href='Aboutus.html'>About Us</a></li>
+
+
+            <li><a href="#" class="loginbox">Register/Log In</a></li>
+
+
+
+
+        <li><a href='../Dealer/Login.html'>Dealers</a></li>
+         <li><a href="../Customer/Searchbycar.html" class="compare">Add To Compare</a></li>
+    </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    
+    <div>
+        <div class="container-fluid slider-bg" id="slider-area">
+            <div class="row">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+
+                    <div class="carousel-inner" role="listbox" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; -o-user-select: none;">
+
+                        <div class="item active">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h3 class="slider-toptitle wow zoomIn" data-wow-delay="0.8s" data-wow-duration="2s">Similar monthly payments for differently priced cars! Which one is a better deal?</h3>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-12 text-center">
+                                                <h4 class="slider-subtitle wow fadeIn" data-wow-delay="1.4s" data-wow-duration="4s">Deposit : &pound;3000 &nbsp; Term : 36 months &nbsp; Annual Mileage : 10000 miles</h4>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="clearfix"></div>
+
+                                        <div class="row sl-flexbox1">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                                <div class="slidercar-div wow fadeIn" data-wow-delay="1.8s" data-wow-duration="2s">
+                                                    <h4 class="name">VW VolkswagenCC</h4>
+                                                    <span class="carmodel">Volkswagen CC 2.0 TDI 150PS BlueMotion Technology 6spd DSG</span>
+                                                    <span><em>Automatic | Diesel | 2.0 Litre</em></span>
+                                                    <img src="../assets1/images/slcar1.jpg" class="img-responsive" alt="Compare PCP deals"/>
+                                                    <div class="onhp">PCP</div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="dt">
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    N monthly payment
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    APR%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt nmamtsp1">
+                                                                    &pound; 544.54
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    6.00%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    Price
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    &pound; 28845.00
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <a href="../Customer/Searchbycar.html" class="nmamtsp2">Compare
+                                                                </a>
+                                                                <!--<a href="#" class="nmamtsp2 openpopup" data-doc_value="1">
+                                                                        Detail
+                                                                    </a>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                                <div class="slidercar-div wow fadeIn" data-wow-delay="1.8s" data-wow-duration="2s">
+                                                    <div class='ribbon'><span>Save 7.79%</span></div>
+                                                    <h4 class="name">BMW Series 5</h4>
+                                                    <span class="carmodel">520d xDrive M Sport Saloon</span>
+                                                    <span><em>Automatic | Diesel | 2.0 Litre</em></span>
+                                                    <img src="../assets1/images/slcar2.jpg" class="img-responsive" alt="Compare PCP deals"/>
+                                                    <div class="onhp">PCP</div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="dt">
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    N monthly payment
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    APR%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt nmamtsp1">
+                                                                    &pound; 542.39
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    3.90%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    Price
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    &pound; 41185.00
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <a href="../Customer/Searchbycar.html" class="nmamtsp2">Compare
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                                                <div class="slidercar-div wow fadeIn" data-wow-delay="1.8s" data-wow-duration="2s">
+                                                    <div class='ribbon'><span>Save 20.81%</span></div>
+                                                    <h4 class="name">Audi A7</h4>
+                                                    <span class="carmodel">Sportback SE Executive 3.0 TDI ultra S tronic</span>
+                                                    <span><em>Automatic | Diesel | 3.0 Litre</em></span>
+                                                    <img src="../assets1/images/slcar3.jpg" class="img-responsive" alt="Compare PCP deals"/>
+                                                    <div class="onhp">PCP</div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="dt">
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    N monthly payment
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    APR%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt nmamtsp1">
+                                                                    &pound; 540.78
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    4.20%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                    Price
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <div class="nmpay">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dr">
+                                                            <div class="dc">
+                                                                <div class="nmamt">
+                                                                    &pound; 48045.00
+                                                                </div>
+                                                            </div>
+                                                            <div class="dc">
+                                                                <a href="../Customer/Searchbycar.html" class="nmamtsp2">Compare
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="text-center">
+                                                    <a href="../Customer/Searchbycar.html" class="sl-android wow zoomInUp" data-wow-delay="1.2s" data-wow-duration="4s">Start Comparing
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                   
+
+                    </div>
+
+                    
+
+                    <!-- Left and right controls -->
+                   
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="container">
+                <div class="row">
+                    <div class="bg1div">
+                        <div class="col-sm-6">
+                            <h3 class="hsctitle">Why ComparePCP?</h3>
+                            <p>
+                                Buying a car is a tedious task which can take weeks, some times
+                                    months, before you decide which car to buy.  This involves two
+                                    key bits, first find a car you love and then look for a finance deal that  is right for you. Often a combination of these two helps you decide.
+                            </p>
+                            <p>
+                                ComparePCP brings all the latest PCP deals for different car brands.  We make it easier for you to find and compare the various PCP deals on new cars. 
+                            </p>
+                            <p>
+                                ComparePCP is a fair and free service for customers and dealers. We neither charge customers nor dealers. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="container">
+                <div class="row">
+                    <div class="bg2div">
+                        <div class="col-sm-6">
+                            <h3 class="hsctitle">How to use?</h3>
+                            <h4>When you have a car in your mind</h4>
+                            <p>
+                                Step 1 : Go to Compare > "PCP deals by car"<br />
+                                Step 2 : Enter the details<br />
+                                Step 3 : Check monthly payments on your preferred car<br />
+                                Step 4 : Scroll down and check “Other cars in similar monthly payment”. If you don’t find or like other deals, then go to “PCP deals by monthly budget”
+                            </p>
+                            <h4>PCP Deals by monthly budget</h4>
+                            <p>
+                                Step 1 : Go to Compare > "PCP deals by monthly budget"<br />
+                                Step 2 : Enter the details (Budget, deposit, term, Mileage, postcode)<br />
+                                Step 3 : Check all the cars in your monthly budget<br />
+                                Step 4 : Filter the cars
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="container">
+                <div class="row">
+                    <div class="bg3div">
+                        <div class="col-sm-6">
+                            <h3 class="hsctitle">How to use?</h3>
+                            <h4>Compare & Save deals</h4>
+                            <p>
+                                Step 1 : Compare the deals with all the details next to each other.<br />
+                                Step 2 : Save deals by signing up or Call dealers directly.
+                            </p>
+                            <h4>Call dealers</h4>
+                            <p>
+                                Step 1 : Call dealer to discuss the details.<br />
+                                Step 2 : A customer will buy directly from the dealers.<br />
+                                Step 3 : Comparepcp.com neither charges customers nor to the dealers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="popup" id="pop-up_1">
+        <div class="popup-container">
+            <div class="popup-content">
+                <div class="close-div">
+                    <i class="fa fa-times close-icon" aria-hidden="true"></i>
+                </div>
+                <div class="detail-table">
+                    <div class="detail-cell">
+                        <div class="detail-car-div">
+                            <h4>Audi A4</h4>
+                            <span>868I 4-door Sport Hatch</span>
+                            <span><em>Manual | Diesel | 2.0 Litre</em></span>
+                            <img src="../assets1/images/car.png" class="img-responsive" alt="Compare PCP deals"/>
+                            <ul>
+                                <li>4.5 Inch HD Touch Screen (1280 X 720)</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>In enim justo, rhoncus ut, imperdiet a</li>
+                                <li>Donec sodales sagittis magna</li>
+                            </ul>
+                            <p>
+                                Please note, the representative example displayed here is indicative only. For an exact quote, please contact your nearest retailer. We strive our best to match the current offers and calculation for different automobile brands. It is possible that despite our best efforts, sometime there might be errors either in price, calculations or entire representative example.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-cell">
+                        <div class="detail-infodiv">
+                            <div class="detail-infotopbg">Hire Purchase Indicative Finance</div>
+                            <div class="clearfix"></div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Retail Price</td>
+                                            <td>&euro;</td>
+                                            <td>20,358.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trade in deposit</td>
+                                            <td>&euro;</td>
+                                            <td>2,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cash deposit</td>
+                                            <td>&euro;</td>
+                                            <td>2,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Deposit Contribution</td>
+                                            <td>&euro;</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Deposit</td>
+                                            <td>&euro;</td>
+                                            <td>4,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amount Financed</td>
+                                            <td>&euro;</td>
+                                            <td>16,358.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duration</td>
+                                            <td></td>
+                                            <td>37</td>
+                                        </tr>
+                                        <tr>
+                                            <td>(n-1) Monthly payment</td>
+                                            <td>&euro;</td>
+                                            <td>328.23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>APR%</td>
+                                            <td></td>
+                                            <td>3.50%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Final Payment</td>
+                                            <td>&euro;</td>
+                                            <td>7,564.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total cost of Credit</td>
+                                            <td>&euro;</td>
+                                            <td>1,950.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Excess Mileage charge</td>
+                                            <td></td>
+                                            <td>3.5 cents</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="testbox" id="demo">
+                <button type="button" data-dismiss="modal" class="close1">×</button>
+                <h1 style="padding-top: 20px"></h1>
+                <form id="form2" action="http://dev.comparepcp.com/">
+                    <div>
+                        <hr id="hr1" class="hr1" />
+                    </div>
+                    <div class="accounttype">
+                        <input type="radio" value="Login" id="radioOne" name="account" checked />
+                        <label for="radioOne" class="radio">Login</label>
+                        <input type="radio" value="Register" id="radioTwo" name="account" />
+                        <label for="radioTwo" class="radio">Register</label>
+                        <input type="radio" value="Reset Password" id="radioThree" name="account" />
+                        <label for="radioThree" class="radio">Reset Password</label>
+                    </div>
+                    <hr id="hr1" class="hr1" />
+                    <div class="login">
+                        <label id="icon" for="name"><i class="icon-envelope "></i></label>
+                        <input type="text" name="loginname" id="loginname" email="true" placeholder="Email" required />
+                        <div class="clearfix"></div>
+                        <label id="icon" for="name"><i class="icon-shield"></i></label>
+                        <input type="password" name="loginpassword" id="loginpassword" style="margin-bottom: 0px; padding-bottom: 0px;" placeholder="Password" required />
+                        <hr id="hr2" class="hr1" style="margin-top: 20px;" />
+
+                        <a href="#" id="login" class="button">Login</a>
+                    </div>
+                    <div class="Register">
+                        <label id="icon" for="name"><i class="icon-envelope "></i></label>
+                        <input type="text" name="name" id="email" placeholder="Email" email="true" required />
+                        <div class="clearfix"></div>
+                        <label id="icon" for="name"><i class="icon-user"></i></label>
+                        <input type="text" name="email" id="name" placeholder="Name" required />
+                        <div class="clearfix"></div>
+                        <label id="icon" for="name"><i class="icon-shield"></i></label>
+                        <input type="password" name="password" id="password" style="margin-bottom: 0px; padding-bottom: 0px;" placeholder="Password" required />
+                        <hr id="hr3" class="hr1" style="margin-top: 20px;" />
+
+                        <a href="#" id="register" class="button">Register</a>
+                    </div>
+                    <div class="Reset">
+                        <label id="icon" for="name"><i class="icon-envelope "></i></label>
+                        <input type="text" name="name" id="emailId" placeholder="Email" email="true" required />
+                        <hr id="hr4" class="hr1" style="margin-top: 20px;" />
+
+                        <a href="#" id="reset" class="button">Reset</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid footerbg">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="Aboutus.html" class="footerlink">About Us</a> &nbsp;&nbsp;&nbsp;
+                            <a href="#" class="footerlink">Feedback</a>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="#" class="footerlink">Privacy Policies</a> &nbsp;&nbsp;&nbsp;
+                            <a href="#" class="footerlink">Cookies Policies</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="footertext">
+                            ComparePCP.com is a trading style of ComparePCP Ltd registered in England with registration # 10776199. The solution is in beta testing and customers are not recommended to use it unless the beta testing had been complete.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+
+
+    <script type="text/javascript">
+        $(".group input").blur(function () {
+            var e = $(this);
+            e.val() ? e.addClass("used") : e.removeClass("used");
+        });
+    </script>
+    
+</body>
+
+<!-- Mirrored from dev.comparepcp.com/Home/Homepage by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2017 06:29:59 GMT -->
+</html>

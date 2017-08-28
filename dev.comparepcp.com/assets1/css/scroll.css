@@ -1,0 +1,468 @@
+.scrolling-feature__wrap {
+    position: relative;
+}
+
+@media (min-width:39.4375em) {
+    .in-page-search__title {
+        margin-bottom: 80px;
+    }
+
+    .scrolling-feature__wrap {
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+    }
+}
+
+@media (min-width:63.4375em) {
+    .scrolling-feature__wrap {
+        padding-left: 3.1875em;
+        padding-right: 3.1875em;
+    }
+}
+
+.scrolling-feature__reverse-mask {
+    position: absolute;
+    top: 0;
+    right: 3.1875em;
+    z-index: -1;
+    height: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__reverse-mask {
+        width: 60%;
+        display: block;
+    }
+}
+
+@media (min-width:1750px) {
+    .scrolling-feature__reverse-mask {
+        width: 58%;
+    }
+}
+
+@media (min-width:2090px) {
+    .scrolling-feature__reverse-mask {
+        width: 56%;
+    }
+}
+
+@media (min-width:2870px) {
+    .scrolling-feature__reverse-mask {
+        width: 54%;
+    }
+}
+
+.scrolling-feature__reverse-mask:after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=);
+    background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,#fff),color-stop(100%,rgba(255,255,255,0)));
+    background: -moz-linear-gradient(top,#fff,rgba(255,255,255,0));
+    background: -webkit-linear-gradient(top,#fff,rgba(255,255,255,0));
+    background: linear-gradient(to bottom,#fff,rgba(255,255,255,0));
+    bottom: -20px;
+    left: 0;
+    z-index: 10;
+}
+
+.scrolling-feature__reverse-mask.is-sibling, .tablesaw-advance-dots li:first-child {
+    display: none;
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__device-wrap {
+        width: 44%;
+        margin-left: 33%;
+        height: 100%;
+        position: relative;
+        overflow: visible;
+        z-index: -2;
+    }
+
+    .scrolling-feature__copy-wrap {
+        width: 46%;
+        position: relative;
+    }
+
+    .scrolling-feature__device {
+        -moz-background-size: 50%;
+        -o-background-size: 50%;
+        -webkit-background-size: 50%;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: right center;
+        position: fixed !important;
+    }
+}
+
+.scrolling-feature__copy-wrap ul {
+    margin-top: 14px;
+    margin-left: 1.5em;
+}
+
+.scrolling-feature__copy-wrap li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__screenshot {
+        position: absolute;
+        overflow: hidden;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+
+    .scrolling-feature__device--blank {
+        width: 50%;
+        padding-bottom: 35%;
+        bottom: 0;
+    }
+}
+
+.scrolling-feature__device--blank .scrolling-feature__screenshot {
+    top: 0;
+    left: 2%;
+    width: 98%;
+    height: 96%;
+    -moz-background-size: 70%;
+    -o-background-size: 70%;
+    -webkit-background-size: 70%;
+    background-size: 70%;
+    background-position: right center;
+}
+
+@media (min-width:1600px) {
+    .scrolling-feature__device--blank .scrolling-feature__screenshot {
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        -webkit-background-size: 70%;
+        background-size: 70%;
+        background-position: right center;
+    }
+}
+
+@media (min-width:1670px) {
+    .scrolling-feature__device--blank .scrolling-feature__screenshot {
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        -webkit-background-size: 70%;
+        background-size: 70%;
+        background-position: right center;
+    }
+}
+
+@media (min-width:1805px) {
+    .scrolling-feature__device--blank .scrolling-feature__screenshot {
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        -webkit-background-size: 70%;
+        background-size: 70%;
+        background-position: right center;
+    }
+}
+
+@media (min-width:1955px) {
+    .scrolling-feature__device--blank .scrolling-feature__screenshot {
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        -webkit-background-size: 70%;
+        background-size: 70%;
+        background-position: right center;
+    }
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__device--macbook {
+        width: 61.1%;
+        padding-bottom: 35%;
+        bottom: 0;
+        background-image: url(../../assets/img/scrolling-feature/laptop-blank.html);
+    }
+}
+
+@media (min-width:1500px) {
+    .scrolling-feature__device--macbook {
+        -moz-background-size: 83.1% auto;
+        -o-background-size: 83.1% auto;
+        -webkit-background-size: 83.1% auto;
+        background-size: 83.1% auto;
+    }
+}
+
+@media (min-width:1600px) {
+    .scrolling-feature__device--macbook {
+        -moz-background-size: 82.1% auto;
+        -o-background-size: 82.1% auto;
+        -webkit-background-size: 82.1% auto;
+        background-size: 82.1% auto;
+    }
+}
+
+@media (min-width:1670px) {
+    .scrolling-feature__device--macbook {
+        -moz-background-size: 77% auto;
+        -o-background-size: 77% auto;
+        -webkit-background-size: 77% auto;
+        background-size: 77% auto;
+        background-position: 13% 50%;
+    }
+}
+
+@media (min-width:1805px) {
+    .scrolling-feature__device--macbook {
+        -moz-background-size: 71.1% auto;
+        -o-background-size: 71.1% auto;
+        -webkit-background-size: 71.1% auto;
+        background-size: 71.1% auto;
+        background-position: 14.5% 50%;
+    }
+}
+
+@media (min-width:1955px) {
+    .scrolling-feature__device--macbook {
+        -moz-background-size: 60.1% auto;
+        -o-background-size: 60.1% auto;
+        -webkit-background-size: 60.1% auto;
+        background-size: 60.1% auto;
+    }
+}
+
+.scrolling-feature__device--macbook .scrolling-feature__screenshot {
+    top: 11.4%;
+    left: 14.2%;
+    width: 71.9%;
+    height: 70.7%;
+}
+
+@media (min-width:1500px) {
+    .scrolling-feature__device--macbook .scrolling-feature__screenshot {
+        -moz-background-size: 84.1% auto;
+        -o-background-size: 84.1% auto;
+        -webkit-background-size: 84.1% auto;
+        background-size: 84.1% auto;
+        background-position: 48% 46%;
+    }
+}
+
+@media (min-width:1600px) {
+    .scrolling-feature__device--macbook .scrolling-feature__screenshot {
+        -moz-background-size: 85.1% auto;
+        -o-background-size: 85.1% auto;
+        -webkit-background-size: 85.1% auto;
+        background-size: 85.1% auto;
+        background-position: 50% 50%;
+    }
+}
+
+@media (min-width:1670px) {
+    .scrolling-feature__device--macbook .scrolling-feature__screenshot {
+        -moz-background-size: 76% auto;
+        -o-background-size: 76% auto;
+        -webkit-background-size: 76% auto;
+        background-size: 76% auto;
+        background-position: 0 50%;
+    }
+}
+
+@media (min-width:1805px) {
+    .scrolling-feature__device--macbook .scrolling-feature__screenshot {
+        -moz-background-size: 71.1% auto;
+        -o-background-size: 71.1% auto;
+        -webkit-background-size: 71.1% auto;
+        background-size: 71.1% auto;
+        background-position: 0 58%;
+    }
+}
+
+@media (min-width:1955px) {
+    .scrolling-feature__device--macbook .scrolling-feature__screenshot {
+        -moz-background-size: 60.3% auto;
+        -o-background-size: 60.3% auto;
+        -webkit-background-size: 60.3% auto;
+        background-size: 60.3% auto;
+        background-position: 0 54%;
+    }
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__device--imac {
+        width: 62.1%;
+        padding-bottom: 44%;
+        bottom: 0;
+        background-image: url(../../assets/img/scrolling-feature/imac-blank.html);
+    }
+
+    .scrolling-feature__title {
+        max-width: 90%;
+    }
+}
+
+@media (min-width:1600px) {
+    .scrolling-feature__device--imac {
+        -moz-background-size: 93.1% auto;
+        -o-background-size: 93.1% auto;
+        -webkit-background-size: 93.1% auto;
+        background-size: 93.1% auto;
+    }
+}
+
+@media (min-width:1670px) {
+    .scrolling-feature__device--imac {
+        -moz-background-size: 88.1% auto;
+        -o-background-size: 88.1% auto;
+        -webkit-background-size: 88.1% auto;
+        background-size: 88.1% auto;
+        background-position: 10% 50%;
+    }
+}
+
+@media (min-width:1770px) {
+    .scrolling-feature__device--imac {
+        -moz-background-size: 77.1% auto;
+        -o-background-size: 77.1% auto;
+        -webkit-background-size: 77.1% auto;
+        background-size: 77.1% auto;
+    }
+}
+
+@media (min-width:1960px) {
+    .scrolling-feature__device--imac {
+        -moz-background-size: 60.1% auto;
+        -o-background-size: 60.1% auto;
+        -webkit-background-size: 60.1% auto;
+        background-size: 60.1% auto;
+    }
+}
+
+@media (min-width:1600px) {
+    .scrolling-feature__device--imac .scrolling-feature__screenshot {
+        -moz-background-size: 93.1% auto;
+        -o-background-size: 93.1% auto;
+        -webkit-background-size: 93.1% auto;
+        background-size: 93.1% auto;
+        background-position: 50% 59%;
+    }
+}
+
+@media (min-width:1670px) {
+    .scrolling-feature__device--imac .scrolling-feature__screenshot {
+        -moz-background-size: 87.1% auto;
+        -o-background-size: 87.1% auto;
+        -webkit-background-size: 87.1% auto;
+        background-size: 87.1% auto;
+        background-position: 4% 50%;
+    }
+}
+
+@media (min-width:1770px) {
+    .scrolling-feature__device--imac .scrolling-feature__screenshot {
+        -moz-background-size: 76.1% auto;
+        -o-background-size: 76.1% auto;
+        -webkit-background-size: 76.1% auto;
+        background-size: 76.1% auto;
+        background-position: 3% 58%;
+    }
+}
+
+@media (min-width:1960px) {
+    .scrolling-feature__device--imac .scrolling-feature__screenshot {
+        -moz-background-size: 59.1% auto;
+        -o-background-size: 59.1% auto;
+        -webkit-background-size: 59.1% auto;
+        background-size: 59.1% auto;
+    }
+}
+
+.scrolling-feature__device--imac .scrolling-feature__screenshot {
+    top: 10.4%;
+    left: 8.6%;
+    width: 82.9%;
+    height: 65.7%;
+}
+
+.scrolling-feature__title {
+    margin-bottom: 1em;
+    padding-bottom: 10px;
+    color: #7e8083;
+}
+
+.scrolling-feature__copy {
+    color: #7e8083;
+}
+
+.scrolling-feature__copy-item {
+    margin-bottom: 60px;
+}
+
+.scrolling-feature__copy-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.scrolling-feature__wrap.is-skrollr-disabled * {
+    opacity: 1 !important;
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__copy-item {
+        margin-bottom: 0;
+    }
+
+    .scrolling-feature__copy-item--lead {
+        margin-top: 20px;
+    }
+}
+
+.scrolling-feature__copy-item--lead .scrolling-feature__title {
+    border-bottom: 2px solid #00bfff;
+    line-height: 36px;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.scrolling-feature__copy-item--lead .scrolling-feature__copy {
+}
+
+.scrolling-feature__copy-item--secondary .scrolling-feature__title {
+    border-bottom: 2px solid #00bfff;
+    line-height: 38px;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+@media (min-width:67.5em) {
+    .scrolling-feature__copy-item--lead .scrolling-feature__copy {
+        font-size: 24px;
+        font-size: 1.5rem;
+    }
+
+    .scrolling-feature__copy-item--secondary {
+        margin-top: 30vh;
+        margin-bottom: 0;
+        padding: 50px 0;
+        background-size: 110%;
+        background-position-x: -50%;
+        background-repeat: no-repeat;
+    }
+
+    .scrolling-feature__copy-item--secondary .scrolling-feature__title {
+        border-bottom: 2px solid #00bfff;
+        line-height: 36px;
+        margin-bottom: 15px;
+        font-size: 28px;
+    }
+
+    .scrolling-feature__copy-item--secondary .scrolling-feature__copy {
+        font-size: 18px;
+        font-size: 1.125rem;
+    }
+}
