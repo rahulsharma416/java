@@ -9,10 +9,15 @@ $variant = $_POST['Va_riant'];
 $longitude = $_POST['Longitude'];
 $latitude = $_POST['Latitude'];
 $flag = $_POST['flag'];
-
-$con = mysqli_connect("localhost", "root", "purple@123", "pmp") or die(mysqli_error($con));
-$sql = "select * from stats where trim = 1 and mileage = $mileage and period = $duration";
-$result = mysqli_query($sql) or die(mysqli_error($con));
+ini_set("display_errors", 1);
+$con = mysqli_connect("localhost", "root", "root", "pmp") or die(mysqli_error($con));
+$sql = "select a.*, b.name as brand_name, c.name as model_name, d.name as variant_name from stats a "
+        . "inner join trims d on d.id = a.trim "
+        . "inner join models c on d.model = c.id "
+        . "inner join brands b on b.id = c.brand "
+        . "where a.trim = 1 and mileage = $mileage and period = $duration";
+        
+$result = mysqli_query($con, $sql) or die(mysqli_error($con));
 $row = mysqli_fetch_object($result);
 $product = array(0=>array(
 "Acceptancefee" =>	$row->acceptance_fee,
@@ -20,7 +25,7 @@ $product = array(0=>array(
 "Id" =>	"1318",
 "OTPfee"	=> $row->otp_fee,
 "Excessmileage"=>"6.98",
-"Variant"=>"Black Edition 1.4 TFSI cylinder on demand Manual",
+"Variant"=>$row->variant_name,
 "Imagename"=>	$row->image_name,
 "StockCarDescription"=>"",
 "Capid"	=>"Audi",
@@ -103,13 +108,14 @@ $product = array(0=>array(
 "TotalDeposite"	=>"",
 "FirstStockId"	=>"11739",
 "Miles1"	=>null,
-"DepositeContribution"=>	null,
+"DepositeContribution"=>	$row->deposit_contribution,
 "TotalAmountPayable"=>	null,
 "TotalAmountCredit"	=>null
 ));
 
 function calculatePriceForNonZeroAPR($customerDeposit, $depositContr, $otr, $i, $t, $optionalFinal, 
         $acceptanceFee, $otp) {
+    global $product;
    $totalDeposit = $customerDeposit + $depositContr;
    $product[0]['TotalDeposite'] = $totalDeposit;
    $amountFinanced = $otr - $totalDeposit;
@@ -126,11 +132,13 @@ function calculatePriceForNonZeroAPR($customerDeposit, $depositContr, $otr, $i, 
    $product[0]['F2'] = $f2;
    $f3 = $f2 / $i;
    $product[0]['F3'] = $f3;
-   $pmt = $f1 / $f3;
+   $pmt = number_format($f1 / $f3, 2);
    $product[0]['Pmt'] = $pmt;
+   $product[0]['Emi'] = $pmt;
 }
 
 function calculatePriceForZeroAPR($customerDeposit, $depositContr, $otr, $period, $optionalFinal) {
+    global $product;
    $totalDeposit = $customerDeposit + $depositContr;
    $product[0]['TotalDeposite'] = $totalDeposit;
    $monthlyRental = ($otr - $totalDeposit - $optionalFinal) / ($period - 1);
@@ -139,12 +147,14 @@ function calculatePriceForZeroAPR($customerDeposit, $depositContr, $otr, $period
 
 $apr = substr($product[0]['APR'], 0, strlen($product[0]['APR']) - 1);
 $apr = (double) $apr;
-$price = ($apr <> 0) ? calculatePriceForNonZeroAPR($cashDeposit, $product[0]['DepositeContribution'], 
+if($apr <> 0) {
+    calculatePriceForNonZeroAPR($cashDeposit, $product[0]['DepositeContribution'], 
         $product[0]['OTP'], $product[0]['I'], $product[0]['T'], $product[0]['Balloon'],
-        $product[0]['Acceptancefee'], $product[0]['OTPfee']) : 
+        $product[0]['Acceptancefee'], $product[0]['OTPfee']);
+} else {
    calculatePriceForZeroAPR($cashDeposit, $product[0]['DepositeContribution'], $product[0]['OTP'], 
            $product[0]['Period'], $product[0]['Balloon']);
-
+}
 print(json_encode($product));
 
 

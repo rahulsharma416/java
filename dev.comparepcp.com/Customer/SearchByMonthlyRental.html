@@ -236,7 +236,25 @@ and open the template in the editor.
                     longitude = "-0.72659";
                     latitude = "52.00522";
                 }
+                $.ajax({
+                    async: false,
+                    type: "Post",
+                    url: 'GetProductsByMp.php',
+                    dataType: "json",
+                    data: { period1: perio_d, mileage1: mileag_e, Fromemi: From_emi, ToEmi: To_Emi, Cashdeposite: Cash_deposite, Br_and: txtBr_and, Mo_del: txtMo_del, Va_riant: txtVa_riant, all_Valsnew1: allVals1.toString(), all_Valsnew2: allVals2.toString(), all_Valsnew3: allVals3.toString(), all_Valsnew4: allVals4.toString(), frompricenew: From_price, topricenew: To_Price, Engine_from: Enginefrom, Engine_to: Engineto, Miles: miles1, NearestTown: postcode, flag: i, Latitude: latitude, Longitude: longitude, _Countrecord: $('.results-row').length },
+                    success: OnSuccess,
+                    failure: function (response) {
+                        alert("Error");
+                    },
+                    error: function (response) {
 
+                        alert("Error1");
+                    },
+                    complete: function (response) {
+
+                    }
+                });
+/*
                 $.ajax({
                     cache: false,
                     type: 'Get',
@@ -304,7 +322,7 @@ and open the template in the editor.
                         alert(response.d);
                     }
                 });
-
+*/  
 
                 $(".modal").hide('slow');
             }
@@ -406,7 +424,7 @@ and open the template in the editor.
                 $.ajax({
                     cache: false,
                     type: 'Post',
-                    url: '/Customer/GetModel', // we are calling json method
+                    url: 'GetModels.php', // we are calling json method
                     dataType: 'json',
                     data: { Brand: $('#txtbrand').val() },
                     success: function (states) {
@@ -455,12 +473,12 @@ and open the template in the editor.
                 $.ajax({
                     cache: false,
                     type: 'Post',
-                    url: '/Customer/GetVariant', // we are calling json method
+                    url: 'GetTrims.php', // we are calling json method
                     dataType: 'json',
                     data: { Brand: $('#txtbrand').val(), Model: $('#txtmodel').val() },
                     success: function (states) {
                         $.each(states, function (i, state) {
-                            sel.append(opt.clone().text(state.Text));
+                            sel.append(opt.clone().text(state));
                         });
                         if (sel.find('option').length >= 1) {
 
@@ -626,7 +644,7 @@ and open the template in the editor.
                     $.ajax({
                         cache: false,
                         type: 'Post',
-                        url: '/Customer/GetModel', // we are calling json method
+                        url: 'GetModels.php', // we are calling json method
                         dataType: 'json',
                         data: { Brand: $('#txtbrand').val() },
                         success: function (states) {
@@ -727,7 +745,7 @@ and open the template in the editor.
                     $.ajax({
                         cache: false,
                         type: 'Post',
-                        url: '/Customer/GetVariant', // we are calling json method
+                        url: 'GetTrims.php', // we are calling json method
                         dataType: 'json',
                         data: { Brand: $('#txtbrand').val(), Model: $('#txtmodel').val() },
                         success: function (states) {
@@ -797,7 +815,7 @@ and open the template in the editor.
                     control.removeAttr("disabled");
                     control.empty();
                     $.each(list, function () {
-                        control.append($("<option></option>").val(this['Value']).html(this['Text']));
+                        control.append($("<option></option>").val(this).html(this));
                     });
                     if (LastSelectedVariant.length != 0) {
                         $(LastSelectedVariant).each(function () {
@@ -821,7 +839,7 @@ and open the template in the editor.
                     control.empty();
 
                     $.each(list, function () {
-                        control.append($("<option></option>").val(this['Value']).html(this['Text']));
+                        control.append($("<option></option>").val(this).html(this));
                     });
 
                     if (LastSelectedModel.length != 0) {
@@ -845,7 +863,7 @@ and open the template in the editor.
                     var a = '';
 
 
-
+                    $('#binditem').html("");
                     $.each(data, function (i, item) {
                         i = i + 1;
 
@@ -2364,9 +2382,9 @@ and open the template in the editor.
                     <span>Price : &pound;<span id="intensity">100</span> - &pound;<span id="intensityto">1000</span></span>
                 </div>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-9">
                 <div class="scroll-div">
-                    <div id="intensityGuage">
+                    <div id="intensityGuage" style="width: 840px;">
                     </div>
                 </div>
             </div>
@@ -2381,7 +2399,7 @@ and open the template in the editor.
                         Go!</button>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-4">
 
                 <div class="mrr" style="text-align: left;">
                     Duration (months)
@@ -2391,24 +2409,8 @@ and open the template in the editor.
                     <input type="button" class="btn232" value="48">
                     
                 </div>
-
-
             </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-3">
-                <div class="mrr">
-                    Postcode<br />
-
-                    
-
-                    <input type="text" id="droptown1" style="width: 182px; height: 36px; line-height: 36px; font-size: 15px; padding: 0 6px;">
-                    <button class="btn btn-secondary go-button" type="button">
-                        Go!</button>
-                </div>
-            </div>
-
-            <div class="col-sm-9">
+            <div class="col-sm-5">
                 <div class="mrr" style="text-align: left;">
                     Avg Annual Mileage (miles) 
                     <br />
@@ -2553,21 +2555,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                             </div>
-                            <div id="BindMiles" class="filterby-subtitle">
-                                <span>Miles</span>
-                                <div id="filtermiles">
-                                    <div class="scroll-div goflex" id="divmiles">
-
-                                        <select class="multiselect" id="dropmiles1" multiple="multiple" name="dropmiles1"><option value="50">50</option>
-<option value="100">100</option>
-<option value="150">150</option>
-<option value="200">200</option>
-<option value="All">All</option>
-</select>
-                                        <button class="btn btn-secondary go-button" type="button">Go!</button>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                         </div>
 
@@ -2650,11 +2638,18 @@ and open the template in the editor.
                             <div id="filtersbody">
                                 <ul id="body">
                                         <li>
+                                            <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[0].IsSelected2" type="checkbox" value="Hatchback" /><input name="Allbody[0].IsSelected2" type="hidden" value="false" />
+                                            <label for="Hatchback">Hatchback</label>
+                                            <input id="Allbody_0__Body" name="Allbody[0].Body" type="hidden" value="Hatchback" />
+                                        </li>
+<!--
+<li>
                                             <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[0].IsSelected2" type="checkbox" value=" Hatchback" /><input name="Allbody[0].IsSelected2" type="hidden" value="false" />
                                             <label for=""> Hatchback</label>
-                                            <input id="Allbody_0__Body" name="Allbody[0].Body" type="hidden" value=" Hatchback" />
+                                            <input id="Allbody_0__Body" name="Allbody[0].Body" type="hidden" value="Hatchback" />
                                         </li>
-                                        <li>
+-->
+<li>
                                             <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[1].IsSelected2" type="checkbox" value="Estate" /><input name="Allbody[1].IsSelected2" type="hidden" value="false" />
                                             <label for="Estate">Estate</label>
                                             <input id="Allbody_1__Body" name="Allbody[1].Body" type="hidden" value="Estate" />
@@ -2674,15 +2669,16 @@ and open the template in the editor.
                                             <label for="Coupe">Coupe</label>
                                             <input id="Allbody_4__Body" name="Allbody[4].Body" type="hidden" value="Coupe" />
                                         </li>
+<!--
                                         <li>
                                             <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[5].IsSelected2" type="checkbox" value="Hatchback" /><input name="Allbody[5].IsSelected2" type="hidden" value="false" />
                                             <label for="Hatchback">Hatchback</label>
                                             <input id="Allbody_5__Body" name="Allbody[5].Body" type="hidden" value="Hatchback" />
                                         </li>
-                                        <li>
-                                            <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[6].IsSelected2" type="checkbox" value="SUV" /><input name="Allbody[6].IsSelected2" type="hidden" value="false" />
+-->                                        <li>
+                                            <input data-val="true" data-val-required="The IsSelected2 field is required." id="filter-body" name="Allbody[5].IsSelected2" type="checkbox" value="SUV" /><input name="Allbody[5].IsSelected2" type="hidden" value="false" />
                                             <label for="SUV">SUV</label>
-                                            <input id="Allbody_6__Body" name="Allbody[6].Body" type="hidden" value="SUV" />
+                                            <input id="Allbody_5__Body" name="Allbody[5].Body" type="hidden" value="SUV" />
                                         </li>
                                 </ul>
                             </div>
