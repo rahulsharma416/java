@@ -1,0 +1,388 @@
+﻿.pd0
+{
+    padding: 0;
+}
+
+.resp-tabs-list
+{
+    list-style-type: none;
+    display:-webkit-box;
+    display: -moz-box;
+    display:-ms-flexbox;
+    display: -webkit-flex;
+    display:flex;
+    -webkit-flex-flow:row;
+    -ms-flex-flow:row;
+    flex-flow:row;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 20px;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.resp-tabs-list li 
+{
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    cursor: pointer;
+}
+
+.resp-tabs-list li:first-child
+{
+    -webkit-align-self: flex-start;
+    -ms-align-self: flex-start;
+    align-self: flex-start;
+}
+
+.resp-tab-item
+{
+    font-size: 15px;
+    padding: 12px 16px !important;
+    min-width: 100px;
+    text-align: center;
+    color: #00bfff;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moztransition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.resp-tab-active {
+    color: #00bfff;
+    border-bottom: 1px solid #00bfff;
+}
+
+.resp-tabs-container {
+    padding: 0px;
+    background-color: white;
+    clear: left;
+}
+
+h2.resp-accordion {
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+}
+
+.resp-tab-content {
+    display: none;
+    padding: 15px;
+}
+
+.resp-content-active,
+.resp-accordion-active { display: block; }
+
+.resp-tab-content { border: 0px solid #c1c1c1; }
+
+h2.resp-accordion {
+    font-size: 13px;
+    border: 1px solid #c1c1c1;
+    border-top: 0px solid #c1c1c1;
+    margin: 0px;
+    padding: 10px 15px;
+}
+
+h2.resp-tab-active {
+    border-bottom: 0px solid #c1c1c1 !important;
+    margin-bottom: 0px !important;
+    padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+    border-bottom: 12px solid #c1c1c1 !important;
+    background: blue;
+}
+
+.resp-arrow 
+{
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #c1c1c1;
+}
+
+h2.resp-tab-active span.resp-arrow 
+{
+    border: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #9B9797;
+}
+
+/*-----------Accordion styles-----------*/
+
+h2.resp-tab-active { background: #ffffff; }
+
+.resp-easy-accordion h2.resp-accordion { display: block; }
+
+.resp-easy-accordion .resp-tab-content:last-child { border-bottom: 1px solid #c1c1c1 !important; }
+
+.resp-jfit {
+    width: 100%;
+    margin: 0px;
+}
+
+.resp-tab-content-active { display: block; }
+
+h2.resp-accordion:first-child { border-top: 1px solid #c1c1c1 !important; }
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+
+    ul.resp-tabs-list { display: none; }
+
+    h2.resp-accordion 
+    { 
+        display: block; 
+        font-size: 15px;
+    }
+
+    .resp-vtabs .resp-tab-content { border: 1px solid #C1C1C1; }
+
+    .resp-vtabs .resp-tabs-container 
+    {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: initial;
+        clear: none;
+    }
+
+    .resp-tab-content { border: 1px solid #c1c1c1; }
+
+    .resp-accordion-closed { display: none !important; }
+
+    .resp-vtabs .resp-tab-content:last-child { border-bottom: 1px solid #c1c1c1 !important; }
+
+}
+
+
+.brandtextbx
+{
+    vertical-align: top;
+    border: 1px solid #dbdce6;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px -3px rgb(221, 221, 221), 0 8px 10px 1px rgba(221, 221, 221,.14), 0 3px 14px 2px rgba(221, 221, 221,.12);
+    background: #fff;
+    margin: 0 0 14px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.brandtextbx .dt
+{
+    display: table;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.brandtextbx .dc
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.brandtextbx .dc:first-child
+{
+    background-color: #00bfff;
+    padding: 12px 0 10px 0;
+    text-align: center;
+    width: 54px;
+}
+
+.brandtextbx .dc:first-child i
+{
+    font-size: 26px;
+    line-height: 26px;
+    color: white;
+}
+
+.brandtextbx .dc:nth-child(2)
+{
+    background-color: #effaff;
+    color: #00bfff;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    width: 75px;
+}
+
+.f13
+{
+    font-size: 13px !important;
+}
+
+.brandtextbx .radioul
+{
+    margin: 0;
+    padding: 2px 0 0 4px;
+    float: left;
+    list-style: none;
+}
+
+.brandtextbx .radioul li
+{
+    box-shadow: none;
+    border: none;
+    letter-spacing: 0;
+    margin: 0 0 0 2px;
+    padding: 0px;
+    float: left;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal !important;
+    cursor: pointer;
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    position: relative;
+}
+
+.brandtextbx .radioul li [type="radio"]:checked,
+.brandtextbx .radioul li [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.brandtextbx .radioul li [type="radio"]:checked + label,
+.brandtextbx .radioul li [type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding: 5px 4px 5px 20px;
+    cursor: pointer;
+    line-height: 12px;
+    display: inline-block;
+    color: #666;
+    font-weight: normal;
+    width: 90px;
+    margin: 2px 0;
+}
+
+.brandtextbx .radioul li [type="radio"]:checked + label
+{
+    background-color: #effaff;
+    border-radius: 3px;
+}
+
+.brandtextbx .radioul li [type="radio"]:checked + label:before,
+.brandtextbx .radioul li [type="radio"]:not(:checked) + label:before 
+{
+    content: '\f058';
+    font-family: FontAwesome;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    border-radius: 100%;
+    color: #ccc;
+    font-size: 16px;
+    font-weight: normal !important;
+}
+
+.brandtextbx .radioul li [type="radio"]:checked + label:after,
+.brandtextbx .radioul li [type="radio"]:not(:checked) + label:after 
+{
+    content: '\f058';
+    font-family: FontAwesome;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    font-size: 16px;
+    font-weight: normal !important;
+    color: #00bfff;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.brandtextbx .radioul li [type="radio"]:not(:checked) + label:after 
+{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.brandtextbx .radioul li [type="radio"]:checked + label:after
+{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.brandtextbx .txtbox,.brandtextbx .txtbox:hover,.brandtextbx .txtbox:focus
+{
+    display: block;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    color: #333333;
+    font-size: 14px;
+    width: 100%;
+}
+
+.continu-btn
+{
+    background-color: #00bfff;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    line-height: 46px;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px 0 rgba(0,0,0,.14), 0 1px 14px 0 rgba(0,0,0,.12);
+    width: 200px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    border: none;
+    outline: none;
+}
+
+.threedddiv
+{
+    vertical-align: top;
+    border: 1px solid #dbdce6;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px -3px rgb(221, 221, 221), 0 8px 10px 1px rgba(221, 221, 221,.14), 0 3px 14px 2px rgba(221, 221, 221,.12);
+    background: #fff;
+    margin: 0 0 10px 0;
+    position: relative;
+    padding: 10px 0 10px 0;
+}
+
+.threedddiv .title
+{
+    color: white;
+    position: relative;
+    padding: 3px 6px 3px 16px;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    background: #00bfff;
+    width: 96%;
+    margin-left: -6px;
+}
+
+.threedddiv .title:before 
+{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    bottom: 100%;
+    left: 0;
+    border-bottom: 8px solid #067da5;
+    border-left: 6px solid transparent;
+}
+
+.threedddiv .ddown
+{
+    margin: 10px 10px 0px 10px;
+    width: calc(100% - 20px);
+    padding: 4px;
+    outline: none;
+    font-size: 13px;
+}
