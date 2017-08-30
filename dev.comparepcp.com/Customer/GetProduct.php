@@ -9,13 +9,15 @@ $variant = $_POST['Va_riant'];
 $longitude = $_POST['Longitude'];
 $latitude = $_POST['Latitude'];
 $flag = $_POST['flag'];
-ini_set("display_errors", 1);
-$con = mysqli_connect("localhost", "root", "root", "pmp") or die(mysqli_error($con));
+ini_set("display_errors", 0);
+require_once 'settings.php';
 $sql = "select a.*, b.name as brand_name, c.name as model_name, d.name as variant_name from stats a "
         . "inner join trims d on d.id = a.trim "
         . "inner join models c on d.model = c.id "
         . "inner join brands b on b.id = c.brand "
-        . "where a.trim = 1 and mileage = $mileage and period = $duration";
+        . "where a.trim = $variant and mileage = $mileage and period = $duration";
+
+//print($sql);
         
 $result = mysqli_query($con, $sql) or die(mysqli_error($con));
 $row = mysqli_fetch_object($result);

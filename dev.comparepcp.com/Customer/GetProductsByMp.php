@@ -19,8 +19,6 @@ $fromPriceNew = $_POST['frompricenew'];
 $toPriceNew = $_POST['topricenew'];
 $fromEngine = $_POST['Engine_from'];
 $toEngine = $_POST['Engine_to'];
-$nearestTown = $_POST['NearestTown'];
-$countRecord = $_POST['_Countrecord'];
 
 function calculatePriceForNonZeroAPR($product, $customerDeposit, $depositContr, $otr, $i, $t, $optionalFinal, 
         $acceptanceFee, $otp) {
@@ -63,7 +61,7 @@ function formatDataIntoStrings($data) {
     return implode(",", $data);
 }
 
-$con = mysqli_connect("localhost", "root", "root", "pmp") or die(mysqli_error($con));
+require_once 'settings.php';
 $sql = "select a.*, b.name as brand_name, c.name as model_name, d.name as variant_name from stats a "
         . "inner join trims d on d.id = a.trim "
         . "inner join models c on d.model = c.id "
@@ -95,11 +93,6 @@ if($variant != "") {
     $variant = formatDataIntoStrings($variant);
     $sql .= ($started) ? " and " : "";
     $sql .= " d.name in ($variant)";
-    $started = true;
-}
-if($miles != "") {
-    $sql .= ($started) ? " and " : "";
-    $sql .= " d.name = $variant";
     $started = true;
 }
 if($fromEngine != "" && $toEngine != "") {
@@ -170,7 +163,7 @@ while($product = mysqli_fetch_array($result)) {
             "Mileage"=>	$mileage,
             "Cash_deposite"=>	$cashDeposit,
             "Cashdeposite"	=> $product['cash_deposit'],
-            "Emi"	=>$product['emi'],
+            "Emi"	=>$product['rental'],
             "Doors"=>	"3",
             "Fuel"	=>"Petrol",
             "Engine"=>	"1.4",
