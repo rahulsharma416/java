@@ -1915,10 +1915,10 @@ and open the template in the editor.
                 $('#E1').val(emis);
                 $('#txtdistance').val(distance);
 
-                $('#comparelink > a').attr('data-id', 'compare.html?' + ids.join('&') + '&' + dealerIds.join('&'));
+                $('#comparelink > a').attr('data-id', 'Compare.html?' + ids.join('&') + '&' + dealerIds.join('&'));
                 $(".comparecount").text(ids.length == 1 ? '(1)' : '(' + ids.length + ')' + dealerIds.length == 1 ? '(1)' : '(' + dealerIds.length + ')');
 
-                $('#comparebutton > a').attr('data-id', 'compare.html?' + ids.join('&') + '&' + dealerIds.join('&'));
+                $('#comparebutton > a').attr('data-id', 'Compare.html?' + ids.join('&') + '&' + dealerIds.join('&'));
 
 
             }
@@ -1961,7 +1961,7 @@ and open the template in the editor.
                     wow_default_alertindexpage();
                 }
                 else {
-                    if (contentId != "compare.html?") {
+                    if (contentId != "Compare.html?") {
                         if (contentId != "") {
                             var $form = $("<form/>").attr("id", "data_form")
                             .attr("action", contentId)
