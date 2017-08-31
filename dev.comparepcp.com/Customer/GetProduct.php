@@ -24,7 +24,7 @@ $row = mysqli_fetch_object($result);
 $product = array(0=>array(
 "Acceptancefee" =>	$row->acceptance_fee,
 "Discount" =>	"3.382187",
-"Id" =>	"1318",
+"Id" =>	$row->id,
 "OTPfee"	=> $row->otp_fee,
 "Excessmileage"=>"6.98",
 "Variant"=>$row->variant_name,
